@@ -94,7 +94,7 @@
 
 Гандлин Александр - [Stepik](https://stepik.org/users/79694206/profile)
 
-Ссылка на проект: [https://github.com/GandlinAlexandr/NLP_projec](https://github.com/GandlinAlexandr/ApPyHW1)
+Ссылка на проект: [https://github.com/GandlinAlexandr/ApPyHW1](https://github.com/GandlinAlexandr/ApPyHW1)
 
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
