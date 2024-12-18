@@ -44,8 +44,9 @@
   * [![Matplotlib][Matplotlib.org]][Matplotlib-url]
   * [![Numpy][Numpy.org]][Numpy-url]
   * [![Pandas][Рandas.pydata.org]][Pandas-url]
-  * [![Streamlit][StreamlitBadge]][Streamlit-url]
   * [![Seaborn][Seaborn-badge]][Seaborn-url]
+  * [![Streamlit][StreamlitBadge]][Streamlit-url]
+
 
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
