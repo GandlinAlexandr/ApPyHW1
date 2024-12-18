@@ -78,6 +78,8 @@
 
 Эта опция доступна только после загрузки датасета с историческими данными.
 
+Ссылка на [streamlit-приложение](https://appyhw1-6csvzbjcb3ecafj3xa5bq6.streamlit.app/).
+
 
 <p align="right">(<a href="#readme-top">Вернуться к началу</a>)</p>
 
