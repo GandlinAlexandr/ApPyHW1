@@ -4,6 +4,8 @@ import streamlit as st
 import pandas as pd
 import requests
 from datetime import datetime
+import matplotlib.dates as mdates
+from sklearn.linear_model import LinearRegression
 
 
 # Функция для получения текущей температуры по городу
@@ -195,6 +197,41 @@ if uploaded_file is not None:
             loc="upper left",
             fontsize=9,
         )
+        st.pyplot(fig)
+
+        st.subheader("Температурный тренд")
+        fig, ax = plt.subplots(figsize=(8, 5))
+        sns.set_theme(style="darkgrid")
+        date_in_num = mdates.date2num(df[df["city"] == selected_city]["timestamp"])
+        model = LinearRegression()
+        model.fit(
+            date_in_num.reshape(-1, 1), df[df["city"] == selected_city]["temperature"]
+        )
+        r_sq = model.score(
+            date_in_num.reshape(-1, 1), df[df["city"] == selected_city]["temperature"]
+        )
+        sign = model.coef_[0] / abs(model.coef_[0])
+        if sign > 0:
+            st.markdown(
+                f'r ≈ {round((r_sq ** 0.5) * sign, 5)}, тренд <span style="color:green">*положительный*</span>',
+                unsafe_allow_html=True,
+            )
+        elif sign < 0:
+            st.markdown(
+                f'r ≈ {round((r_sq ** 0.5) * sign, 5)}, тренд <span style="color:red">*отрицательный*</span>',
+                unsafe_allow_html=True,
+            )
+
+        sns.regplot(
+            df[df["city"] == selected_city],
+            x=date_in_num,
+            y="temperature",
+            scatter_kws={"s": 2.5},
+            line_kws=dict(color="r"),
+        )
+        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+        plt.gca().xaxis.set_major_locator(mdates.YearLocator())
+        ax.set(title=f"{selected_city}", xlabel="Date", ylabel="Temperature, °C")
         st.pyplot(fig)
 
         st.header("Шаг 2: Получение актуальных данных")
