@@ -64,7 +64,7 @@
 
 |          city         | timestamp     |     temperature  |     season       |
 |-----------------------|---------------|------------------|------------------|
-|    New York           |    01.01.201|-5.83282310497167    |      winter       |
+|    New York           |    2010-01-01|-0.177210    |      winter       |
 
 [Пример датасета](https://github.com/GandlinAlexandr/ApPyHW1/blob/main/temperature_data.csv) (искусственные данные).
 
